@@ -34,6 +34,9 @@ const ServiceShape = styled.div`
   ${Shape}
   clip-path: polygon(0% 0%, 33% 0%, 33% 100%, 0% 100%);
   background-color: #f88497;
+  @media only screen and (max-width: 480px){
+        background-color: lightgray;
+    }
 `
 const PriceShape = styled.div`
   ${Shape}
@@ -42,6 +45,7 @@ const PriceShape = styled.div`
 `
 
 const App = () => {
+  const smallScreen = window.screen.width <= 480 ? true : false;
   return (
     <>
       <Container>
@@ -55,6 +59,7 @@ const App = () => {
       </Container>
       <Container>
         <Service/>
+        {/* {!smallScreen &&<ServiceShape/>} */}
         <ServiceShape/>
       </Container>
       <Container>
